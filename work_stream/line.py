@@ -1,4 +1,3 @@
-import sys
 from work_stream.block import StreamBlock
 
 
@@ -41,7 +40,6 @@ class StreamLine:
         :param kwargs: **kwargs参数
         :param inherit: 是否继承，
         :return: None
-
         特别说明：参数inherit优先级大于args, kwargs即当inherit=Ture时，函数会传入上一个函数的返回值，此时指定的args,kwargs均无效。
         """
         if kwargs is None:
@@ -56,6 +54,23 @@ class StreamLine:
             }
         )
         self.count += 1
+
+    def append(self, blocks):
+        if isinstance(blocks, list):
+            for b in blocks:
+                block = None
+                if isinstance(b, tuple):
+                    block = StreamBlock(*b)
+                elif isinstance(b, dict):
+                    block = StreamBlock(**b)
+                self.line.append(
+                    {
+                        'id': self.count,
+                        'status': block.status,
+                        'block': block
+                    }
+                )
+                self.count += 1
 
     def start(self, target=None):
         """
