@@ -55,7 +55,12 @@ class StreamLine:
         )
         self.count += 1
 
-    def append(self, blocks):
+    def append(self, blocks: list):
+        """
+        批量提交block
+        :param blocks: block列表
+        :return: None
+        """
         if isinstance(blocks, list):
             for b in blocks:
                 block = None
@@ -76,7 +81,7 @@ class StreamLine:
         """
         开启流水线加工
         :param target: 原材料
-        :return: 成品(数据)
+        :return: 成品(数据) | Error
         """
         value = self.line[0]['block'].start(target)
         if self.line[0]['status']['status'] == 'error':
