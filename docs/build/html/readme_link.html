@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>简介 &mdash; work-stream 0.0.1 文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="quick started" href="quick_started.html" />
+    <link rel="prev" title="Welcome to work-stream’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> work-stream
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">简介</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">特性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">版本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">文档</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quick_started.html">quick started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">高级</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API References:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python_apis/modules.html">work_stream</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">work-stream</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>简介</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/readme_link.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1 align="center">work-stream</h1><p><span class="raw-html-m2r"><a href='https://work-stream.readthedocs.io/zh/latest/?badge=latest'><img src='https://readthedocs.org/projects/work-stream/badge/?version=latest' alt='Documentation Status' /></a></span>
+<span class="raw-html-m2r"><a href='https://work-stream.readthedocs.io/zh/latest/?badge=latest'><img src="https://img.shields.io/badge/python-3.6%2B-brightgreen" alt="PyPI - Python Version"></a></span>
+<span class="raw-html-m2r"><a href="https://pypi.org/project/work-stream"><img src="https://img.shields.io/badge/pypi-v0.0.1-brightgreen" alt="PyPI - Format"></a></span>
+<span class="raw-html-m2r"><a href="https://pypi.org/project/work-stream"><img src="https://img.shields.io/badge/release-0.0.1-brightgreen" alt="Release - Format"></a></span></p>
+<p><span class="raw-html-m2r"><br></span></p>
+<section id="id1">
+<h1>简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>这是一个用于应对运维工作的模块，能够将提前设定好的运维任务流水线式执行，并且支持流程化编排。</p>
+<p><span class="raw-html-m2r"><br></span></p>
+<section id="id2">
+<h2>特性<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>支持流程状态管理。</p></li>
+<li><p>每个流程/块支持接收上一流程/块的返回值。</p></li>
+<li><p>支持分支流程，需要自己设定判断表达式。</p></li>
+<li><p>支持流程编排。</p></li>
+</ul>
+<p><span class="raw-html-m2r"><br></span></p>
+</section>
+<section id="id3">
+<h2>版本<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>python3.6+</p>
+<p><span class="raw-html-m2r"><br></span></p>
+</section>
+<section id="id4">
+<h2>安装<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">work</span><span class="o">-</span><span class="n">stream</span>
+</pre></div>
+</div>
+<p><span class="raw-html-m2r"><br></span></p>
+</section>
+<section id="id5">
+<h2>文档<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>详见:<a class="reference external" href="https://work-stream.readthedocs.io/zh/latest/?badge=latest">https://work-stream.readthedocs.io/zh/latest/?badge=latest</a></p>
+<p><span class="raw-html-m2r"><br></span></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to work-stream’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="quick_started.html" class="btn btn-neutral float-right" title="quick started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, fengqing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

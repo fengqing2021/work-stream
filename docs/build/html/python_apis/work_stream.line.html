@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>work_stream.line module &mdash; work-stream 0.0.1 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="work_stream.container module" href="work_stream.container.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> work-stream
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../readme_link.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_started.html">quick started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">高级</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API References:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">work_stream</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="work_stream.html">work_stream package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="work_stream.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="work_stream.block.html">work_stream.block module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="work_stream.branch.html">work_stream.branch module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="work_stream.container.html">work_stream.container module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">work_stream.line module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="work_stream.html#module-work_stream">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">work-stream</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">work_stream</a> &raquo;</li>
+          <li><a href="work_stream.html">work_stream package</a> &raquo;</li>
+      <li>work_stream.line module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/python_apis/work_stream.line.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-work_stream.line">
+<span id="work-stream-line-module"></span><h1>work_stream.line module<a class="headerlink" href="#module-work_stream.line" title="永久链接至标题">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="work_stream.line.StreamLine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">work_stream.line.</span></span><span class="sig-name descname"><span class="pre">StreamLine</span></span><a class="reference internal" href="../_modules/work_stream/line.html#StreamLine"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#work_stream.line.StreamLine" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>流水线，用于编排块。</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="work_stream.line.StreamLine.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inherit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/work_stream/line.html#StreamLine.add"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#work_stream.line.StreamLine.add" title="永久链接至目标">¶</a></dt>
+<dd><p>向流水线中添加块。
+:param func: 加工方法
+:param args: <a href="#id1"><span class="problematic" id="id2">*</span></a>arg参数
+:param kwargs: <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs参数
+:param inherit: 是否继承，
+:return: None</p>
+<p>特别说明：参数inherit优先级大于args, kwargs即当inherit=Ture时，函数会传入上一个函数的返回值，此时指定的args,kwargs均无效。</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="work_stream.line.StreamLine.length">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">length</span></span><a class="headerlink" href="#work_stream.line.StreamLine.length" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="work_stream.line.StreamLine.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/work_stream/line.html#StreamLine.start"><span class="viewcode-link"><span class="pre">[源代码]</span></span></a><a class="headerlink" href="#work_stream.line.StreamLine.start" title="永久链接至目标">¶</a></dt>
+<dd><p>开启流水线加工
+:param target: 原材料
+:return: 成品(数据)</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="work_stream.container.html" class="btn btn-neutral float-left" title="work_stream.container module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, fengqing.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
