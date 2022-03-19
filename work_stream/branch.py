@@ -20,7 +20,7 @@ class StreamBranch:
         """
         分支选择
         :param value: 上一个函数的返回值
-        :return: 分支在
+        :return: 分支
         """
         res = (self.branch1, self.branch2)[eval(self.expression)]
         return res
