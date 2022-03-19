@@ -18,7 +18,7 @@ class StreamBlock:
 
         self.func = func
         self.mode = mode
-        self.status = {'status': '', 'result': '', 'cost': '', 'mode': self.mode}
+        self.status = {'status': '', 'result': '', 'cost': '', 'mode': self.mode, 'param': ''}
         self.args = args
         self.kwargs = kwargs
         if args or kwargs:
@@ -35,8 +35,10 @@ class StreamBlock:
         try:
             if self.mode:
                 value = self.func(target)
+                self.status['param'] = str(target)
             else:
                 value = self.func(*self.args, **self.kwargs)
+                self.status['param'] = str(f'args:{str(self.args)}, kwargs:{str(self.kwargs)}')
 
             self.status['cost'] = '%sms' % ((time.perf_counter() - start_time) * 1000)
             self.status['result'] = value
