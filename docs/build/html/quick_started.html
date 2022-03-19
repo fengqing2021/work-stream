@@ -19,7 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="高级" href="advanced.html" />
+    <link rel="next" title="进阶" href="advanced.html" />
     <link rel="prev" title="简介" href="readme_link.html" /> 
 </head>
 
@@ -41,13 +41,8 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="readme_link.html">简介</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">快速开始</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">3</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="advanced.html">高级</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">快速开始</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">进阶</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API References:</span></p>
 <ul>
@@ -80,16 +75,83 @@
              
   <section id="id1">
 <h1>快速开始<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>This is a brief introduction of our project <code class="docutils literal notranslate"><span class="pre">mymodule</span></code>.</p>
-<section id="id2">
-<h2>1<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-</section>
-<section id="id3">
-<h2>2<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-</section>
-<section id="id4">
-<h2>3<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-</section>
+<p>首先你需要自定义一个方法,例如：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">n</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>接下来导入<code class="docutils literal notranslate"><span class="pre">StreamLine</span></code>。你可以把它当成一条流水线/一个流程/一个动作，下文均以流水线为例。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">work_stream</span> <span class="kn">import</span> <span class="n">StreamLine</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">line</span> <span class="o">=</span> <span class="n">StreamLine</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">line</span>
+<span class="go">&lt;work_stream.line.StreamLine object at 0x000001BF1C5DA680&gt;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">StreamLine</span></code>是一个可迭代的对象，可以通过调用其<code class="docutils literal notranslate"><span class="pre">length</span></code>和<code class="docutils literal notranslate"><span class="pre">ready</span></code>属性来查看流水线长度和是否完成的状态。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">line</span><span class="o">.</span><span class="n">length</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">line</span><span class="o">.</span><span class="n">ready</span>
+<span class="go">False</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p><span class="raw-html-m2r"><br></span></p>
+<p>现在我们把最开始定义好的<code class="docutils literal notranslate"><span class="pre">add</span></code>方法添加到流水线中,并调用<code class="docutils literal notranslate"><span class="pre">line</span></code>属性查看其流水线当前的状态/属性/值。<code class="docutils literal notranslate"><span class="pre">param</span></code>字段值为<code class="docutils literal notranslate"><span class="pre">''</span></code>，是因为流水线还未执行。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">line</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">line</span><span class="o">.</span><span class="n">line</span>
+<span class="go">[{&#39;id&#39;: 0, &#39;status&#39;: {&#39;status&#39;: &#39;&#39;, &#39;result&#39;: &#39;&#39;, &#39;cost&#39;: &#39;&#39;, &#39;mode&#39;: True, &#39;param&#39;: &#39;&#39;}, &#39;block&#39;: &lt;work_stream.block.StreamBlock object at 0x000001BF1C5DACE0&gt;}]</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>如上所示，<code class="docutils literal notranslate"><span class="pre">add</span></code>方法被添加到<code class="docutils literal notranslate"><span class="pre">line</span></code>对象中之后变成了<code class="docutils literal notranslate"><span class="pre">block</span></code>对象。<code class="docutils literal notranslate"><span class="pre">block</span></code>重新封装了<code class="docutils literal notranslate"><span class="pre">add</span></code>是为了能够管理<code class="docutils literal notranslate"><span class="pre">add</span></code>的执行生命周期的状态以便于维护，其字段含义顾名思义。</p>
+<p><span class="raw-html-m2r"><br></span></p>
+<p>当然，<code class="docutils literal notranslate"><span class="pre">add</span></code>还还能接收自定义参数。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">line</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">line</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="mi">123</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>如果你有很多个方法需要<code class="docutils literal notranslate"><span class="pre">add</span></code>，可以使用<code class="docutils literal notranslate"><span class="pre">append</span></code>方法提交：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">line</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[</span>
+<span class="gp">... </span>        <span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)),</span>
+<span class="gp">... </span>        <span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="p">(),</span> <span class="p">{</span><span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}),</span>
+<span class="gp">... </span>        <span class="p">{</span><span class="s1">&#39;func&#39;</span><span class="p">:</span> <span class="n">add</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;kwargs&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}</span>
+<span class="gp">... </span>    <span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p><span class="raw-html-m2r"><br></span></p>
+<p><strong>特别说明：</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">add</span></code>的方法自带<code class="docutils literal notranslate"><span class="pre">inherit=True</span></code>参数，该参数决定<strong>是否使用上一参数的返回值</strong>。当流水线中<strong>第一个</strong>方法执行时，默认接收<code class="docutils literal notranslate"><span class="pre">start</span></code>方法中的<code class="docutils literal notranslate"><span class="pre">target</span></code>参数。</p>
+<p><code class="docutils literal notranslate"><span class="pre">inherit</span></code>参数与自定义参数(<code class="docutils literal notranslate"><span class="pre">args</span></code>,<code class="docutils literal notranslate"><span class="pre">kwargs</span></code>)是<strong>互斥</strong>的，但是两者都写也不会报错<strong>，在``StreamLine``的内部，</strong>自定义参数的优先级比<code class="docutils literal notranslate"><span class="pre">inherit</span></code>更高**。</p>
+<p><span class="raw-html-m2r"><br></span></p>
+<p>一切准备就绪，通过调用<code class="docutils literal notranslate"><span class="pre">line.start()</span></code>执行流水线。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">work_stream</span> <span class="kn">import</span> <span class="n">StreamLine</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">n</span>
+<span class="gp">...</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">line</span> <span class="o">=</span> <span class="n">StreamLine</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="n">line</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">line</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">res</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">line</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">[{&#39;id&#39;: 0, &#39;status&#39;: {&#39;status&#39;: &#39;completed&#39;, &#39;result&#39;: 24, &#39;cost&#39;: &#39;0.004399975296109915ms&#39;, &#39;mode&#39;: True}, &#39;block&#39;: &lt;work_stream.block.StreamBlock object at 0x000001BF1C647970&gt;}, {&#39;id&#39;: 1, &#39;status&#39;: {&#39;status&#39;: &#39;completed&#39;, &#39;result&#39;: 48, &#39;cost&#39;: &#39;0.000700005330145359ms&#39;, &#39;mode&#39;: True}, &#39;block&#39;: &lt;work_stream.block.StreamBlock object at 0x000001BF1C6468F0&gt;}]</span>
+<span class="go">48</span>
+</pre></div>
+</div>
+<p>最终得到了一个<code class="docutils literal notranslate"><span class="pre">12+12+24+24</span></code>的结果。</p>
+<p><span class="raw-html-m2r"><br></span>
+更进一步的玩法：关于如何编排多个流水线。请在进阶中查看。</p>
 </section>
 
 
@@ -97,7 +159,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="readme_link.html" class="btn btn-neutral float-left" title="简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="advanced.html" class="btn btn-neutral float-right" title="高级" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="advanced.html" class="btn btn-neutral float-right" title="进阶" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
